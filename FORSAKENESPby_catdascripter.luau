@@ -256,8 +256,8 @@ local function itemesp(p)
 local billboard = Instance.new("BillboardGui")
 billboard.Size = UDim2.new(2, 0, 0.5, 0) -- Adjust size
 billboard.StudsOffset = Vector3.new(0, 1.25, 0) -- Position above head
-billboard.Adornee = p:FindFirstChild("MainRoot")
-billboard.Parent = p:FindFirstChild("MainRoot")
+billboard.Adornee = p:FindFirstChild("ItemRoot")
+billboard.Parent = p:FindFirstChild("ItemRoot")
 billboard.AlwaysOnTop = true
 local textLabel = Instance.new("TextLabel")
 textLabel.Size = UDim2.new(1, 0, 1, 0)
@@ -343,14 +343,14 @@ end
 ing.DescendantAdded:Connect(function(v)
 	if v:IsA("Tool") then
 	repeat wait() until v:IsA("Tool")
-		genesp(v)
+		itemesp(v)
 	end
 end)
 
 for _,v in pairs(ing:GetDescendants()) do
 	if v:IsA("Tool") then
 	repeat wait() until v:IsA("Tool")
-		genesp(v)
+		itemesp(v)
 	end
 end
 
